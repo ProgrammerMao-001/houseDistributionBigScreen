@@ -1,6 +1,10 @@
 # houseDistributionBigScreen
 太原市房屋分布信息大屏
 
+```
+cnpm i coordtransform
+```
+
 
 
 # 数据表介绍

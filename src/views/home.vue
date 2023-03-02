@@ -1,18 +1,26 @@
 <template>
     <div class="main">
+        <!-- 标题头 -->
         <div class="main-header">
             <DataViewHeader/>
+        </div>
+
+        <div class="main-content">
+            <!-- 地图 -->
+            <div class="center-map">
+                <centerMap ref="centerMap"/>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-
     import DataViewHeader from "@/components/DataViewHeader";
+    import centerMap from "@/views/centerMap/centerMap";
 
     export default {
         name: 'home',
-        components: {DataViewHeader}
+        components: {DataViewHeader, centerMap}
     }
 </script>
 
