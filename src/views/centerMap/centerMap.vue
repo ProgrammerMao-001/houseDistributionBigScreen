@@ -1,14 +1,14 @@
 <template>
     <div style="width: 100%;height: 100%;">
         <div id="centerMap" class="centerMap" style="width: 100%;height: 100%"></div>
-        <!--        <projectBasicInfoDialog ref="projectBasicInfoDialog"/>-->
+        <houseDetail ref="houseDetail"/>
     </div>
 </template>
 
 <script>
-    // import projectBasicInfoDialog from "@/components/projectBasicInfoDialog";
     import MiddleUtils from "@/utils/middle-utils"
     import {getHouseTableByCity} from "@/api/houseModule";
+    import houseDetail from "@/views/centerMap/houseDetail";
 
     var coordtransform = require('coordtransform');
     let map;
@@ -16,13 +16,12 @@
 
     export default {
         name: "centerMap",
-        components: {},
+        components: {houseDetail},
         data() {
             return {
                 lon: 0,
                 lat: 0,
                 zoom: 16,
-                alarmStatus: null
             }
         },
         watch: {},
@@ -33,8 +32,6 @@
                 //创建自定义图层对象
                 const lay = new T.TileLayer(imageURL, {minZoom: 0, maxZoom: 18});
                 map = new T.Map('centerMap', {layers: [lay]});
-
-
                 const typeArr = [
                     {
                         title: '卫星',
@@ -57,7 +54,7 @@
             },
 
             // 获取地图数据的接口
-            getProjectList(userNow) {
+            getProjectList() {
                 let lngArr = []; // 存放所有经度
                 let latArr = []; // 存放所有纬度
                 let lays = map.getOverlays();//获取地图上所有的覆盖物
@@ -66,11 +63,10 @@
                 }
                 getHouseTableByCity({}).then(res => {
                     if (res.data.status === 200) {
-                        // todo 清空地图上所有的点，实现userNow变化时重新打点
                         res.data.data.forEach(item => {
                             if (item.longitude && item.longitude !== '' && item.latitude && item.latitude !== '') {
                                 const icon = new T.Icon({
-                                    iconUrl: item.alarmStatus === 1 ? "img/base/houseDaFu/city-alarm.png" : "img/base/houseDaFu/city.png",
+                                    iconUrl: "img/base/houseDaFu/city.png",
                                     iconSize: new T.Point(24, 24),
                                     iconAnchor: new T.Point(12, -12),
                                 });
@@ -84,11 +80,11 @@
                                 // 点击的弹窗事件
                                 marker.addEventListener('click', () => {
                                     console.log('showDialog', item)
-                                    // const workData = {
-                                    //     title: '工程基本信息',
-                                    //     id: item.id,
-                                    // };
-                                    // (this.$refs.projectBasicInfoDialog).showDialog(workData);
+                                    const houseData = {
+                                        title: '房屋基本信息',
+                                        id: item.id,
+                                    };
+                                    (this.$refs.houseDetail).showDialog(houseData);
                                 });
                             }
                             // 找出经纬度分别对应的最大最小值
@@ -137,12 +133,6 @@
         },
         mounted() {
             this.showMap();
-
-            // 接收中间件，改变报警状态
-            MiddleUtils.$on('changeAlarmStatus', (value) => {
-                this.alarmStatus = value.alarmStatus;
-                this.getProjectList();
-            })
         },
         created() {
         }
