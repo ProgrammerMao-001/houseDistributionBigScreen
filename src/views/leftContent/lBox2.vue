@@ -10,9 +10,9 @@
 
             <div class="search-box">
                 <el-input v-model="sellname" placeholder="请输入内容"></el-input>
-                <el-button size="small" style="height: 30px;margin: 6px  0 0 20px" @click="searchBySellName"> 搜索
+                <el-button size="small" style="height: 30px;margin: 6px  0 0 10px" @click="searchBySellName"> 搜索
                 </el-button>
-                <el-button size="small" style="height: 30px;margin: 6px  0 0 20px" @click="restForm"> 重置</el-button>
+                <el-button size="small" style="height: 30px;margin: 6px  0 0 10px" @click="restForm"> 重置</el-button>
             </div>
         </div>
 
@@ -117,13 +117,12 @@
 
 <style lang="scss" scoped>
     .lbox2 {
-        width: 96%;
+        width: 94%;
         margin: 10px auto;
-        border: 1px solid red;
     }
 
     .public-header {
-        width: 90%;
+        width: 98%;
         margin: 10px auto;
         display: flex;
         align-items: center;
