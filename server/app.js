@@ -10,6 +10,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors())              //配置跨域，必须在路由之前
 app.use('/api', router)      //配置路由
 
-app.listen(3000, () => {
-    console.log('服务器启动成功。 ---> http://127.0.0.1:3000/api');
+app.listen(5000, () => {
+    console.log('服务器启动成功。 ---> http://127.0.0.1:5000/api');
 })

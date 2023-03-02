@@ -3,6 +3,8 @@
 
 
 
+# 数据表介绍
+```
 1.房屋表
 	city：市名
 	houseName：房屋名称
@@ -16,3 +18,4 @@
 	
 2.用户表（userName: 用户名，password：密码，id）
 3.标题表（title: 标题名称，id）
+```
