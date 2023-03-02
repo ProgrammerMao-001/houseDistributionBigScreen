@@ -5,7 +5,8 @@
             <div class="left-top">房屋信息</div>
             <div class="is-pick-up" title="隐藏房屋信息" @click="foldIt"></div>
             <div style="height: calc(100% - 60px);overflow: auto;">
-                <!-- 在售房源数量 -->
+                <!-- 各区县在售房源数量 -->
+                <rBox1 ref="rBox1"></rBox1>
                 <!-- 各区县房屋总价 -->
                 <!-- 在售房源数据 -->
             </div>
@@ -14,11 +15,11 @@
 </template>
 
 <script>
+    import rBox1 from "@/views/rightContent/rBox1";
 
     export default {
         name: "rightContent",
-        components: {
-        },
+        components: {rBox1},
         props: {
             rightFlag: {}
         },
