@@ -75,7 +75,24 @@
              * */
             showRightContent() {
                 this.rightFlag = true; // 显示左侧
+            },
+
+            onWindowResize() {
+                const w = 1920
+                const h = 1080
+                const scaleW = document.body.clientWidth / w
+                const scaleH = document.body.clientHeight / h
+                const appDom = document.querySelector(".main") || null
+                console.log(appDom)
+                appDom.style.cssText = `transform: scale(${scaleW})`
+                // appDom.style.cssText = `transform: scale(${scaleW}, ${scaleH})`;
             }
+        },
+        mounted() {
+            this.onWindowResize()
+            setTimeout(() => {
+                this.onWindowResize()
+            }, 100)
         },
         created() {
             /**
@@ -84,6 +101,11 @@
             setInterval(() => {
                 this.currentTime = new Date();
             }, 1000)
+            window.addEventListener('resize', this.onWindowResize)
+        },
+        destroyed() {
+            clearTimeout(this.timer)
+            window.removeEventListener('resize', this.onWindowResize)
         }
     }
 </script>
