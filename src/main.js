@@ -11,6 +11,17 @@ Vue.prototype.$axios = axios;
 Vue.use(ElementUI);
 // 引入全局css
 import './assets/scss/style.scss';
+
+// 将自动注册所有组件为全局组件
+import dataV from '@jiaminghi/data-view'
+
+Vue.use(dataV)
+
+/* 自定义指令的全局注册 */
+import Directive from '@/directives'
+
+Vue.use(Directive)
+
 /**
  * todo 路由发生变化修改页面title
  * 路由守卫

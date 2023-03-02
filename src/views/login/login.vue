@@ -416,7 +416,7 @@
                             border: 0;
                             border-bottom: 1px solid #ccc;
                             outline: medium;
-                            padding: 0 0 16px 40px;
+                            padding: 0 0 16px 20px;
                             color: #666;
 
                             &::placeholder {
