@@ -9,7 +9,8 @@ import "element-ui/lib/theme-chalk/index.css";
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios;
 Vue.use(ElementUI);
-
+// 引入全局css
+import './assets/scss/style.scss';
 /**
  * todo 路由发生变化修改页面title
  * 路由守卫
