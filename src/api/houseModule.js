@@ -2,4 +2,5 @@
 import {get, post} from "../utils/request";
 
 export const getHouseTableByCity = (obj) => get("api/getHouseTableByCity", obj);
+export const getHouseTableBySellName = (obj) => get("api/getHouseTableBySellName", obj);
 export const getHouseDetail = (obj) => get("api/getHouseDetail", obj);

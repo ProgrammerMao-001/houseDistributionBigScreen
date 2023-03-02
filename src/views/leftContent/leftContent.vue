@@ -8,6 +8,8 @@
                 <!-- 用户信息 -->
                 <lBox1 ref="lBox1"/>
                 <!-- 销售员排行 -->
+                <lBox2 ref="lBox2"/>
+
             </div>
         </div>
     </transition>
@@ -15,10 +17,11 @@
 
 <script>
     import lBox1 from "@/views/leftContent/lBox1";
+    import lBox2 from "@/views/leftContent/lBox2";
 
     export default {
         name: "leftContent",
-        components: {lBox1},
+        components: {lBox1, lBox2},
         props: {
             leftFlag: {}
         },

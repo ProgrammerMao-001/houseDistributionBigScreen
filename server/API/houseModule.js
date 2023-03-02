@@ -2,12 +2,30 @@
 let db = require('../db/index')
 let makeUuid = require("../utils/makeUuid")
 
-// GET 查询数据
+// GET 根据城市名查询数据
 // 需要传入的参数 =》 名称：city （都不传则默认所有数据）
 exports.getHouseTableByCity = (req, res) => {
     let sql = 'SELECT * FROM housetable';
     let obj = req.query;
-    if (obj.name) sql = `SELECT * FROM housetable WHERE city = "${obj.city}"`
+    if (obj.city) sql = `SELECT * FROM housetable WHERE city = "${obj.city}"`
+    db.query(sql, (err, data, fields) => {
+        if (err) {
+            return res.send('错误：' + err.message)
+        }
+        res.send({
+            status: 200,
+            message: "success",
+            data
+        });
+    })
+}
+
+// GET 根据销售名称查询数据
+// 需要传入的参数 =》 名称：sellname （都不传则默认所有数据）
+exports.getHouseTableBySellName = (req, res) => {
+    let sql = 'SELECT * FROM housetable';
+    let obj = req.query;
+    if (obj.sellname) sql = `SELECT * FROM housetable WHERE sellname = "${obj.sellname}"`
     db.query(sql, (err, data, fields) => {
         if (err) {
             return res.send('错误：' + err.message)

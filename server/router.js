@@ -30,8 +30,9 @@ router.post('/updateTitleList', titleModule.updateTitleList) // 编辑大屏标�
 /* 房屋模块 */
 router.get('/getHouseTableByCity', houseModule.getHouseTableByCity) // 获取大屏所有数据
 router.get('/getHouseDetail', houseModule.getHouseDetail) // 获取单个数据详情
+router.get('/getHouseTableBySellName', houseModule.getHouseTableBySellName) // 根据销售名查询数据
 
 /* 区县模块 */
-router.get('/getCityList', cityModule.getCityList) // 获取大屏所有数据
+router.get('/getCityList', cityModule.getCityList) // 获取市区数据
 
 module.exports = router
