@@ -22,6 +22,9 @@ import Directive from '@/directives'
 
 Vue.use(Directive)
 
+import filter from './filters'
+
+Vue.use(filter)
 /**
  * todo 路由发生变化修改页面title
  * 路由守卫

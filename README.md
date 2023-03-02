@@ -3,6 +3,7 @@
 
 ```
 cnpm i coordtransform
+cnpm i dayjs
 ```
 
 

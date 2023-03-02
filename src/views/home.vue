@@ -6,10 +6,27 @@
         </div>
 
         <div class="main-content">
+            <!-- 左侧大盒子 -->
+            <div class="left-content">
+                <leftContent ref="leftContent" :leftFlag="leftFlag" @on-response="getLeftFlag"/>
+                <div title="显示人员信息" v-show="!leftFlag" class="is-show-left" @click="showLeftContent"></div>
+            </div>
+
             <!-- 地图 -->
             <div class="center-map">
                 <centerMap ref="centerMap"/>
             </div>
+
+            <!-- 时间 -->
+            <div class="timer-box">
+                <span class="data-view-time-text">{{currentTime | formatDate('YYYY-MM-DD HH:mm:ss')}}</span>
+            </div>
+            <!-- 右侧大盒子 -->
+            <div class="right-content">
+                <rightContent ref="rightContent" :rightFlag="rightFlag" @on-response="getRightFlag"/>
+                <div title="显示房屋信息" v-show="!rightFlag" class="is-show-right" @click="showRightContent"></div>
+            </div>
+
         </div>
     </div>
 </template>
@@ -17,10 +34,57 @@
 <script>
     import DataViewHeader from "@/components/DataViewHeader";
     import centerMap from "@/views/centerMap/centerMap";
+    import leftContent from "@/views/leftContent/leftContent";
+    import rightContent from "@/views/rightContent/rightContent";
 
     export default {
         name: 'home',
-        components: {DataViewHeader, centerMap}
+        components: {DataViewHeader, centerMap, leftContent, rightContent},
+        data() {
+            return {
+                currentTime: new Date(),
+                leftFlag: true, // 用来接收子组件传来的左侧的显示/隐藏的标记
+                rightFlag: true, // 用来接收子组件传来的右侧的显示/隐藏的标记
+            }
+        },
+        methods: {
+
+            /**
+             * @desc 获取 leftContent 页面接收来的flag
+             * */
+            getLeftFlag(flag) {
+                this.leftFlag = flag;
+            },
+
+            /**
+             * @desc 点击图标时，出现左侧的盒子
+             * */
+            showLeftContent() {
+                this.leftFlag = true; // 显示左侧
+            },
+
+            /**
+             * @desc 获取 rightContent 页面接收来的flag
+             * */
+            getRightFlag(flag) {
+                this.rightFlag = flag;
+            },
+
+            /**
+             * @desc 点击图标时，出现右侧的盒子
+             * */
+            showRightContent() {
+                this.rightFlag = true; // 显示左侧
+            }
+        },
+        created() {
+            /**
+             * 获取 右上角的时间
+             * */
+            setInterval(() => {
+                this.currentTime = new Date();
+            }, 1000)
+        }
     }
 </script>
 
@@ -28,11 +92,6 @@
     .main {
         position: relative;
         height: 100%;
-        /*width: 1920px;*/
-        /*height: 1080px;*/
-        /*overflow: hidden;*/
-        /*transform-origin: left top;*/
-        /*pointer-events: none;*/
 
         .main-header {
             position: fixed;
@@ -70,7 +129,7 @@
             }
 
             .left-content {
-                z-index: 888 !important;
+                z-index: 9999 !important;
                 position: absolute;
                 left: 0;
                 top: 110px;
@@ -127,8 +186,4 @@
         }
     }
 
-    /*/deep/ .el-select__tags {*/
-    /*    flex-wrap: unset;*/
-    /*    overflow: auto;*/
-    /*}*/
 </style>
