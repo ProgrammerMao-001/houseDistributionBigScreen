@@ -5,6 +5,8 @@ let loginModule = require('./API/loginModule')
 let picModule = require('./API/picModule')
 let titleModule = require('./API/titleModule')
 let houseModule = require('./API/houseModule')
+let cityModule = require('./API/cityModule')
+
 router.get('/', (req, res) => {
     res.send('express启动成功!');
 })
@@ -28,5 +30,8 @@ router.post('/updateTitleList', titleModule.updateTitleList) // 编辑大屏标�
 /* 房屋模块 */
 router.get('/getHouseTableByCity', houseModule.getHouseTableByCity) // 获取大屏所有数据
 router.get('/getHouseDetail', houseModule.getHouseDetail) // 获取单个数据详情
+
+/* 区县模块 */
+router.get('/getCityList', cityModule.getCityList) // 获取大屏所有数据
 
 module.exports = router
