@@ -10,7 +10,7 @@ const routes = [
         name: "Home",
         component: Home,
         meta: {
-            title: "太原市房屋数字化大屏",
+            title: "太原市房屋分布信息大屏",
         },
     },
     {
