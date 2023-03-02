@@ -5,6 +5,9 @@
             <div class="left-top">房屋信息</div>
             <div class="is-pick-up" title="隐藏房屋信息" @click="foldIt"></div>
             <div style="height: calc(100% - 60px);overflow: auto;">
+                <!-- 在售房源数量 -->
+                <!-- 各区县房屋总价 -->
+                <!-- 在售房源数据 -->
             </div>
         </div>
     </transition>

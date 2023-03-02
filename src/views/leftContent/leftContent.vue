@@ -5,17 +5,20 @@
             <div class="left-top">人员信息</div>
             <div class="is-pick-up" title="隐藏人员信息" @click="foldIt"></div>
             <div style="overflow: auto;height: calc(100% - 60px)">
-                sasd
+                <!-- 用户信息 -->
+                <lBox1 ref="lBox1"/>
+                <!-- 销售员排行 -->
             </div>
         </div>
     </transition>
 </template>
 
 <script>
+    import lBox1 from "@/views/leftContent/lBox1";
 
     export default {
         name: "leftContent",
-        components: {},
+        components: {lBox1},
         props: {
             leftFlag: {}
         },

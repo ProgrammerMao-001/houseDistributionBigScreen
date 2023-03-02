@@ -129,7 +129,7 @@
             }
 
             .left-content {
-                z-index: 9999 !important;
+                z-index: 999 !important;
                 position: absolute;
                 left: 0;
                 top: 110px;
