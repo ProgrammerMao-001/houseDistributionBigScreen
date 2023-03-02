@@ -124,7 +124,6 @@ exports.login = (req, res) => {
 // 密码：password
 // 头像：headimg --- https://img-blog.csdnimg.cn/img_convert/2e1955b703679764792778c8efb15617.jpeg（默认的）
 exports.updateUser = (req, res) => {
-    console.log(req.body)
     let sql = 'UPDATE userlist SET username = ?, `headimg` = ?, `password` = ? where `id` = ?'
     let arr = [req.body.username, req.body.headimg, req.body.password, req.body.id]
     db.query(sql, arr, (err, data) => {

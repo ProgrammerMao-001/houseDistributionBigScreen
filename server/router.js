@@ -13,6 +13,7 @@ let willFixList = require('./API/willFixList')
 /* new */
 let loginModule = require('./API/loginModule')
 let picModule = require('./API/picModule')
+let titleModule = require('./API/titleModule')
 /* new */
 router.get('/', (req, res) => {
     res.send('express启动成功!');
@@ -77,17 +78,23 @@ router.post('/updateWillFixList', willFixList.updateWillFixList) // 编辑维修
 
 
 /* new */
-/* 用户相关 */
+/* 用户模块 */
 router.get('/getPicCode', loginModule.getPicCode); // 图片验证码
 router.post('/login', loginModule.login) // 登陆
 router.post('/register', loginModule.register) // 注册
-router.get('/getUserDetail', loginModule.getUserDetail) // 用户管理 --- 用户的详情
-router.get('/deleteUser', loginModule.deleteUser) // 用户管理 --- 删除用户
-router.post('/updateUser', loginModule.updateUser) // 用户管理 --- 编辑用户
+router.get('/getUserDetail', loginModule.getUserDetail) // 用户详情
+router.get('/deleteUser', loginModule.deleteUser) // 注销用户
+router.post('/updateUser', loginModule.updateUser) // 编辑用户
 
-/* 图片相关 */
+/* 图片模块 */
 router.post('/upload', picModule.upload) // 图片上传
 router.get('/getImg', picModule.getImg) // 图片预览（获取图片完整的地址）
+
+/* 标题模块 */
+router.get('/getTitleList', titleModule.getTitleList) // 获取大屏标题
+router.post('/updateTitleList', titleModule.updateTitleList) // 编辑大屏标题
+
+/* 房屋数据模块 */
 /* new */
 
 module.exports = router
