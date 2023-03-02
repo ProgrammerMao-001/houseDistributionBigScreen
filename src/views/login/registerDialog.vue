@@ -175,7 +175,7 @@
     }
 
     ::v-deep .el-dialog__title {
-        color: #f08080 !important;
+        /*color: #f08080 !important;*/
     }
 
     ::v-deep .el-dialog__header {

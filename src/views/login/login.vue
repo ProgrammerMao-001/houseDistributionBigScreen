@@ -1,18 +1,6 @@
 <template>
     <div class="main-bg">
         <div class="login">
-            <!-- 头部标题 - 开始 -->
-            <div class="head-title">
-                <div class="title--h1"></div>
-            </div>
-
-            <!-- 头部标题 - 开始 -->
-
-            <!-- 左侧图片模块 - 开始 -->
-            <div class="left"></div>
-            <!-- 左侧图片模块 - 结束 -->
-
-            <!-- 右侧账号密码登录模块 - 开始 -->
             <div class="right">
                 <!-- 登录表单 -->
                 <div class="form">
@@ -88,8 +76,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-info">
             </div>
             <registerDialog ref="registerDialog"/>
         </div>
@@ -354,51 +340,21 @@
         width: 100%;
         height: 100%;
         min-width: 1280px;
-        min-height: 800px;
+        min-height: 900px;
         overflow: hidden;
-        background: rgba(240, 128, 128, 0.6);
         background-size: cover;
-        /* 头部标题logo */
-        .head-title {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background-color: #f08080;
-            align-items: center;
-            display: flex;
-            padding-left: 20px;
 
-            /* 大标题 */
-            .title--h1 {
-                float: left;
-                width: 533px;
-                height: 50px;
-                /*background: url('../../assets/pic/logo.png') no-repeat;*/
-                background-size: auto 50px;
-            }
-        }
-
-        /* 左侧背景图片 */
-        .left {
-            width: 47%;
-            height: 47%;
-            position: absolute;
-            left: 5%;
-            top: 20%;
-            /*background: url('../../assets/pic/bg.png') no-repeat center;*/
-            background-size: contain;
-        }
-
-        /* 右侧登录界面 */
         .right {
             position: absolute;
-            right: 8.95%;
-            top: 26.83%;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
             width: 500px;
+            height: 444px;
             padding-bottom: 16px;
-            border-radius: 20px;
+            border-radius: 10px;
             box-shadow: 1px 11px 15px 5px rgba(0, 0, 0, 0.06);
             background: #ffffff;
 
@@ -427,7 +383,8 @@
                     font-size: 24px;
                     font-weight: 600;
                     letter-spacing: 1px;
-                    color: #f08080;
+                    color: #001246;
+                    /*color: #f08080;*/
                 }
 
                 /* 用户账号密码表单主题 */
@@ -453,8 +410,9 @@
 
                         input {
                             display: inline-block;
-                            width: 300px;
-                            height: 23.25px;
+                            /*width: 300px;*/
+                            /*height: 23.25px;*/
+                            width: 100%;
                             border: 0;
                             border-bottom: 1px solid #ccc;
                             outline: medium;
@@ -473,7 +431,7 @@
 
                         .main--verifi_code {
                             position: absolute;
-                            right: 3px;
+                            right: 4px;
                             bottom: 13px;
                             width: 90px;
                             height: 30px;
@@ -588,7 +546,7 @@
                             cursor: pointer;
 
                             &:hover {
-                                color: #f08080;
+                                color: #001246;
                             }
                         }
                     }
@@ -629,22 +587,6 @@
                     }
                 }
             }
-        }
-
-        /* 底部信息栏 */
-        .footer-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            padding-top: 12px;
-            padding-bottom: 4px;
-            text-align: center;
-            background-color: #eb7171;
-            line-height: 12px;
-            color: #ccc;
-            font-size: 12px;
         }
     }
 </style>
