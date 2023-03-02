@@ -18,6 +18,7 @@
 
 <script>
     import {getHouseTableByCity} from "@/api/houseModule";
+    import {getCityList} from "@/api/cityModule";
 
     export default {
         name: "rBox1",
@@ -27,6 +28,8 @@
         data() {
             return {
                 houseTable: [],
+                cityList: [],
+                seriesData: [],
                 xinghualing: 0,
                 qingxu: 0,
                 yuci: 0,
@@ -46,7 +49,6 @@
              * */
             getHouseTableByCity() {
                 getHouseTableByCity({}).then(res => {
-                    console.log(res.data.data)
                     res.data.data.forEach((item, index) => {
                         if (item.city.indexOf('杏花岭') !== -1) this.xinghualing += 1
                         if (item.city.indexOf('清徐县') !== -1) this.qingxu += 1
@@ -64,16 +66,52 @@
                 })
             },
 
-            initEchars() {
+            initEcharts() {
+                let option = {
+                    xAxis: {
+                        type: 'category',
+                        data: this.cityList
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [
+                        {
+                            data: this.seriesData,
+                            type: 'line'
+                        }
+                    ]
+                };
+                let houseNumEcharts = document.getElementById("houseNumEcharts");
+                let chartRisk = this.$echarts.init(houseNumEcharts);
+                chartRisk.clear();
+                chartRisk.setOption(option);
+                // 自适应窗口大小
+                window.addEventListener("resize", function () {
+                    chartRisk.resize();
+                });
+            },
 
+            getCityList() {
+                getCityList({}).then(res => {
+                    res.data.data.forEach(item => {
+                        this.cityList.push(item.city)
+                    })
+
+                    this.getHouseTableByCity()
+                    this.seriesData = [this.xinghualing, this.qingxu, this.yuci, this.yingze, this.wanbolin, this.xiaodian, this.jiancaoping, this.jiyuan, this.yangqu, this.loufan, this.gujiao]
+                    this.initEcharts()
+                })
             }
+
 
         },
         created() {
             this.getHouseTableByCity()
+            this.getCityList()
         },
         mounted() {
-
+            this.initEcharts()
         },
 
     }

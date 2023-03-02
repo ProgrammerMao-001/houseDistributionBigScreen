@@ -25,6 +25,12 @@ Vue.use(Directive)
 import filter from './filters'
 
 Vue.use(filter)
+
+// 引入echarts
+import * as echarts from 'echarts'
+
+Vue.prototype.$echarts = echarts
+
 /**
  * todo 路由发生变化修改页面title
  * 路由守卫
