@@ -12,6 +12,7 @@ let willFixList = require('./API/willFixList')
 
 /* new */
 let loginModule = require('./API/loginModule')
+let picModule = require('./API/picModule')
 /* new */
 router.get('/', (req, res) => {
     res.send('express启动成功!');
@@ -83,6 +84,10 @@ router.post('/register', loginModule.register) // 注册
 router.get('/getUserDetail', loginModule.getUserDetail) // 用户管理 --- 用户的详情
 router.get('/deleteUser', loginModule.deleteUser) // 用户管理 --- 删除用户
 router.post('/updateUser', loginModule.updateUser) // 用户管理 --- 编辑用户
+
+/* 图片相关 */
+router.post('/upload', picModule.upload) // 图片上传
+router.get('/getImg', picModule.getImg) // 图片预览（获取图片完整的地址）
 /* new */
 
 module.exports = router
