@@ -9,6 +9,10 @@ let fixPeopleList = require('./API/fixPeopleList')
 let roomlist = require('./API/roomlist')
 let editRoomList = require('./API/editRoomList')
 let willFixList = require('./API/willFixList')
+
+/* new */
+let loginModule = require('./API/loginModule')
+/* new */
 router.get('/', (req, res) => {
     res.send('express启动成功!');
 })
@@ -69,5 +73,16 @@ router.get('/deleteWillFixList', willFixList.deleteWillFixList) // 删除维修�
 router.post('/addWillFixList', willFixList.addWillFixList) // 新增维修单
 router.post('/updateWillFixList', willFixList.updateWillFixList) // 编辑维修单
 /* 维修模块 */
+
+
+/* new */
+/* 用户相关 */
+router.get('/getPicCode', loginModule.getPicCode); // 图片验证码
+router.post('/login', loginModule.login) // 登陆
+router.post('/register', loginModule.register) // 注册
+router.get('/getUserDetail', loginModule.getUserDetail) // 用户管理 --- 用户的详情
+router.get('/deleteUser', loginModule.deleteUser) // 用户管理 --- 删除用户
+router.post('/updateUser', loginModule.updateUser) // 用户管理 --- 编辑用户
+/* new */
 
 module.exports = router
