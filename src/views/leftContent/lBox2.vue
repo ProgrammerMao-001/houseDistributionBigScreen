@@ -17,7 +17,7 @@
         </div>
 
 
-        <dv-scroll-board :config="configData" style="width:100%;height:400px"/>
+        <dv-scroll-board :config="configData" style="width:100%;height:300px"/>
     </div>
 </template>
 

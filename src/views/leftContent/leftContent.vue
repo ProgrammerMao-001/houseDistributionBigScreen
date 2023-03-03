@@ -9,7 +9,8 @@
                 <lBox1 ref="lBox1"/>
                 <!-- 销售员排行 -->
                 <lBox2 ref="lBox2"/>
-
+                <!-- 各区县房屋均价 -->
+                <lBox3 ref="lBox3"></lBox3>
             </div>
         </div>
     </transition>
@@ -18,10 +19,11 @@
 <script>
     import lBox1 from "@/views/leftContent/lBox1";
     import lBox2 from "@/views/leftContent/lBox2";
+    import lBox3 from "@/views/leftContent/lBox3";
 
     export default {
         name: "leftContent",
-        components: {lBox1, lBox2},
+        components: {lBox1, lBox2, lBox3},
         props: {
             leftFlag: {}
         },

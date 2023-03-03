@@ -120,7 +120,8 @@
             initEcharts() {
                 let option = {
                     tooltip: {
-                        trigger: 'item'
+                        trigger: 'item',
+                        formatter:'{b0}: {c0}元/㎡<br />'
                     },
                     legend: {
                         top: '20%',
