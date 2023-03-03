@@ -10,6 +10,7 @@
                 <!-- 各区县房屋最低总价 -->
                 <rBox2 ref="rBox2"></rBox2>
                 <!-- 在售房源数据 -->
+                <rBox3 ref="rBox3"></rBox3>
             </div>
         </div>
     </transition>
@@ -18,10 +19,11 @@
 <script>
     import rBox1 from "@/views/rightContent/rBox1";
     import rBox2 from "@/views/rightContent/rBox2";
+    import rBox3 from "@/views/rightContent/rBox3";
 
     export default {
         name: "rightContent",
-        components: {rBox1, rBox2},
+        components: {rBox1, rBox2, rBox3},
         props: {
             rightFlag: {}
         },

@@ -123,14 +123,14 @@
                         trigger: 'item'
                     },
                     legend: {
-                        top: '5%',
+                        top: '20%',
                         left: 'center'
                     },
                     series: [
                         {
                             name: '哈哈哈撒杜鳌',
                             type: 'pie',
-                            radius: ['40%', '70%'],
+                            radius: ['50%', '70%'],
                             avoidLabelOverlap: false,
                             itemStyle: {
                                 borderRadius: 10,
@@ -209,6 +209,6 @@
     .lowPriceOnCity {
         width: 92%;
         margin: -30px auto;
-        height: 230px;
+        height: 300px;
     }
 </style>
