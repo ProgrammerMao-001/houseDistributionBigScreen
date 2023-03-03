@@ -63,22 +63,65 @@
                         if (item.city.indexOf('古交市') !== -1) this.gujiao += 1
                     })
                     // console.log(this.xinghualing, this.qingxu, this.yuci, this.yingze, this.wanbolin, this.xiaodian, this.jiancaoping, this.jiyuan, this.yangqu, this.loufan, this.gujiao, )
+                    this.seriesData = [this.xinghualing, this.qingxu, this.yuci, this.yingze, this.wanbolin, this.xiaodian, this.jiancaoping, this.jiyuan, this.yangqu, this.loufan, this.gujiao]
                 })
             },
 
             initEcharts() {
                 let option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            // type: 'cross',
+                            // crossStyle: {
+                            //     color: '#999'
+                            // }
+                        }
+                    },
                     xAxis: {
                         type: 'category',
-                        data: this.cityList
+                        data: this.cityList,
+                        triggerEvent: true,
+                        axisLine: {
+                            show: false
+                        },
+                        splitLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        },
+                        axisLabel: {
+                            rotate: 0, // 坐标轴名字旋转，角度值。
+                            textStyle: {
+                                color: "#fff",
+                                fontSize: 10,
+                            }
+                        }
                     },
                     yAxis: {
-                        type: 'value'
+                        type: 'value',
+                        axisLabel: {
+                            rotate: 0, // 坐标轴名字旋转，角度值
+                            textStyle: {
+                                color: "#fff",
+                                fontSize: 12
+                            }
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                type: "dashed" // 横向的虚线
+                            }
+                        },
+                        axisLine: {
+                            show: false
+                        }
                     },
                     series: [
                         {
                             data: this.seriesData,
-                            type: 'line'
+                            type: 'line',
+                            color: '#2d64bb'
                         }
                     ]
                 };
@@ -97,21 +140,20 @@
                     res.data.data.forEach(item => {
                         this.cityList.push(item.city)
                     })
-
-                    this.getHouseTableByCity()
-                    this.seriesData = [this.xinghualing, this.qingxu, this.yuci, this.yingze, this.wanbolin, this.xiaodian, this.jiancaoping, this.jiyuan, this.yangqu, this.loufan, this.gujiao]
-                    this.initEcharts()
                 })
             }
 
 
         },
         created() {
-            this.getHouseTableByCity()
-            this.getCityList()
+
         },
         mounted() {
-            this.initEcharts()
+            this.getHouseTableByCity()
+            this.getCityList()
+            setTimeout(() => {
+                this.initEcharts()
+            }, 500)
         },
 
     }
@@ -136,8 +178,7 @@
 
     .houseNumEcharts {
         width: 92%;
-        margin: 10px auto 0;
-        height: 300px;
-        border: 1px solid red;
+        margin: -30px auto;
+        height: 230px;
     }
 </style>
