@@ -163,7 +163,7 @@
              * @returns 无
              */
             isRememberPsd() {
-                this.$store.dispatch('loginModule/getRemPsdFlag', this.remPsdFlag)
+                // this.$store.dispatch('loginModule/getRemPsdFlag', this.remPsdFlag)
                 this.remPsdFlag = !this.remPsdFlag;
             },
 
@@ -218,7 +218,7 @@
                             this.$router.push('/home');
                             this.isLoading = false;
                             this.$message.success('登陆成功');
-                            this.$store.dispatch('loginModule/getUserInfo')
+                            // this.$store.dispatch('loginModule/getUserInfo')
                         }
                         if (res.status === 101404) {
                             (this.$refs.username).focus(); // 聚焦
@@ -588,5 +588,10 @@
                 }
             }
         }
+    }
+
+    .main-bg {
+        background: #021e43 url("../../assets/loginBg.jpg") no-repeat fixed center;
+        background-size: auto 100%;
     }
 </style>
