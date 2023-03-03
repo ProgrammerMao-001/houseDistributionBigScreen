@@ -1,7 +1,7 @@
 <template>
     <div class="data-view-header">
         <!-- 图片不带文字的 -->
-        <div @click="showDialog" class="data-view-title">{{formData.title}}</div>
+        <div @click="showDialog" class="data-view-title">{{title}}</div>
         <el-button
                 style="position: absolute;right: 50px;top: 20px;background-color: #072b5d!important;border: transparent!important;"
                 @click="logOut()"> 退出登陆
@@ -36,6 +36,7 @@
         name: 'DataViewHeader',
         data() {
             return {
+                title: '',
                 visible: false,
                 formData: {
                     id: '',
@@ -75,7 +76,8 @@
             getSystemTitle() {
                 getTitleList({}).then(res => {
                     if (res.data.status === 200) {
-                        this.formData = res.data.data[0]
+                        this.formData = res.data.data[0];
+                        this.title = this.formData.title
                     } else {
                         this.$message.warning('网络异常，请稍后重试。')
                     }
