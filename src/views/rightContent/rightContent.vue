@@ -7,7 +7,8 @@
             <div style="height: calc(100% - 60px);overflow: auto;">
                 <!-- 各区县在售房源数量 -->
                 <rBox1 ref="rBox1"></rBox1>
-                <!-- 各区县房屋总价 -->
+                <!-- 各区县房屋最低总价 -->
+                <rBox2 ref="rBox2"></rBox2>
                 <!-- 在售房源数据 -->
             </div>
         </div>
@@ -16,10 +17,11 @@
 
 <script>
     import rBox1 from "@/views/rightContent/rBox1";
+    import rBox2 from "@/views/rightContent/rBox2";
 
     export default {
         name: "rightContent",
-        components: {rBox1},
+        components: {rBox1, rBox2},
         props: {
             rightFlag: {}
         },
