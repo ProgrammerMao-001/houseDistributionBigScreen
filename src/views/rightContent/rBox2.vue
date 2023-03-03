@@ -125,6 +125,9 @@
                     legend: {
                         top: '20%',
                         left: 'center',
+                        textStyle: {
+                            color: "#fff"
+                        },
                     },
                     series: [
                         {
@@ -140,12 +143,12 @@
                             },
                             label: {
                                 show: false,
-                                position: 'center'
+                                position: 'outside',
                             },
                             emphasis: {
                                 label: {
                                     show: true,
-                                    fontSize: 40,
+                                    fontSize: 20,
                                     fontWeight: 'bold'
                                 }
                             },
@@ -166,7 +169,7 @@
                                 {value: this.gujiao, name: '古交市'},
                             ]
                         }
-                    ]
+                    ],
                 };
                 let lowPriceOnCity = document.getElementById("lowPriceOnCity");
                 let chartRisk = this.$echarts.init(lowPriceOnCity);

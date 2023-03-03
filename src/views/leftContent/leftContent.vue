@@ -2,10 +2,10 @@
     <transition name="moveL">
         <div v-show="showLeftFlag" class="bg bg-left" style="height: 100%">
             <div style="height: 2px"></div>
-            <div class="left-top">人员信息</div>
-            <div class="is-pick-up" title="隐藏人员信息" @click="foldIt"></div>
+            <div class="left-top">销售信息</div>
+            <div class="is-pick-up" title="隐藏销售信息" @click="foldIt"></div>
             <div style="overflow: auto;height: calc(100% - 60px)">
-                <!-- 用户信息 -->
+                <!-- 销售信息 -->
                 <lBox1 ref="lBox1"/>
                 <!-- 销售员排行 -->
                 <lBox2 ref="lBox2"/>

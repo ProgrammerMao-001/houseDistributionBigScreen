@@ -9,7 +9,7 @@
             <!-- 左侧大盒子 -->
             <div class="left-content">
                 <leftContent ref="leftContent" :leftFlag="leftFlag" @on-response="getLeftFlag"/>
-                <div title="显示人员信息" v-show="!leftFlag" class="is-show-left" @click="showLeftContent"></div>
+                <div title="显示销售信息" v-show="!leftFlag" class="is-show-left" @click="showLeftContent"></div>
             </div>
 
             <!-- 地图 -->
