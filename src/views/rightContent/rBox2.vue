@@ -124,12 +124,13 @@
                     },
                     legend: {
                         top: '20%',
-                        left: 'center'
+                        left: 'center',
                     },
                     series: [
                         {
-                            name: '哈哈哈撒杜鳌',
+                            name: '',
                             type: 'pie',
+                            top: '34%',
                             radius: ['50%', '70%'],
                             avoidLabelOverlap: false,
                             itemStyle: {

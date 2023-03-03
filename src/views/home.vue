@@ -77,15 +77,18 @@
                 this.rightFlag = true; // 显示左侧
             },
 
+            /**
+             * 屏幕适配
+             * */
             onWindowResize() {
-                // const w = 1920
-                // const h = 1080
-                // const scaleW = document.body.clientWidth / w
-                // const scaleH = document.body.clientHeight / h
-                // const appDom = document.querySelector(".main") || null
-                // console.log(appDom)
-                // appDom.style.cssText = `transform: scale(${scaleW})`
-                // // appDom.style.cssText = `transform: scale(${scaleW}, ${scaleH})`;
+                const w = 1920
+                const h = 1080
+                const scaleW = document.body.clientWidth / w
+                const scaleH = document.body.clientHeight / h
+                const appDom = document.querySelector(".main") || null
+                console.log(appDom)
+                appDom.style.cssText = `transform: scale(${scaleW})`
+                // appDom.style.cssText = `transform: scale(${scaleW}, ${scaleH})`;
             }
         },
         mounted() {
