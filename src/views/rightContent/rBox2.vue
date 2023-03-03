@@ -28,23 +28,23 @@
                 qingxu: 0,
                 qingxuArr: 0, // 清徐县
                 yuci: 0,
-                yuciArr: 0,
+                yuciArr: 0, // 榆次区
                 yingze: 0,
-                yingzeArr: 0,
+                yingzeArr: 0, // 迎泽区
                 wanbolin: 0,
-                wanbolinArr: 0,
+                wanbolinArr: 0, // 万柏林区
                 xiaodian: 0,
-                xiaodianArr: 0,
+                xiaodianArr: 0, // 小店区
                 jiancaoping: 0,
-                jiancaopingArr: 0,
+                jiancaopingArr: 0, // 尖草坪区
                 jiyuan: 0,
-                jiyuanArr: 0,
+                jiyuanArr: 0, // 晋源区
                 yangqu: 0,
-                yangquArr: 0,
+                yangquArr: 0, // 阳曲县
                 loufan: 0,
-                loufanArr: 0,
+                loufanArr: 0, // 娄烦县
                 gujiao: 0,
-                gujiaoArr: 0,
+                gujiaoArr: 0, // 古交市
             }
         },
         methods: {
