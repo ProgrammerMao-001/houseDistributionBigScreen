@@ -243,12 +243,26 @@
 
             initEcharts() {
                 let option = {
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross'
+                        },
+                        formatter: '{b0}<br />平均值 {c0}元/㎡'
+                    },
                     xAxis: {
                         type: 'category',
-                        data: this.cityList
+                        data: this.cityList,
+                        axisLabel: {
+                            color: '#fff',
+                        }
                     },
                     yAxis: {
-                        type: 'value'
+                        type: 'value',
+                        axisLabel: {
+                            formatter: '{value} ㎡',
+                            color: '#fff',
+                        },
                     },
                     series: [
                         {
@@ -256,67 +270,67 @@
                                 {
                                     value: this.xinghualing,
                                     itemStyle: {
-                                        color: '#5470c6'
+                                        color: 'rgba(84, 112, 198, .8)'
                                     }
                                 },
                                 {
                                     value: this.qingxu,
                                     itemStyle: {
-                                        color: '#91cc75'
+                                        color: 'rgba(145, 204, 117,.8)'
                                     }
                                 },
                                 {
                                     value: this.yuci,
                                     itemStyle: {
-                                        color: '#fac858'
+                                        color: 'rgba(250, 200, 88,.8)'
                                     }
                                 },
                                 {
                                     value: this.yingze,
                                     itemStyle: {
-                                        color: '#ee6666'
+                                        color: 'rgba(238, 102, 102,.8)'
                                     }
                                 },
                                 {
                                     value: this.wanbolin,
                                     itemStyle: {
-                                        color: '#73c0de'
+                                        color: 'rgba(115, 192, 222,.8)'
                                     }
                                 },
                                 {
                                     value: this.xiaodian,
                                     itemStyle: {
-                                        color: '#3ba272'
+                                        color: 'rgba(59, 162, 114,.8)'
                                     }
                                 },
                                 {
                                     value: this.jiancaoping,
                                     itemStyle: {
-                                        color: '#fc8452'
+                                        color: 'rgba(252, 132, 82,.8)'
                                     }
                                 },
                                 {
                                     value: this.jiyuan,
                                     itemStyle: {
-                                        color: '#9a60b4'
+                                        color: 'rgba(154, 96, 180,.8)'
                                     }
                                 },
                                 {
                                     value: this.yangqu,
                                     itemStyle: {
-                                        color: '#ea7ccc'
+                                        color: 'rgba(234, 124, 204,.8)'
                                     }
                                 },
                                 {
                                     value: this.loufan,
                                     itemStyle: {
-                                        color: '#5470c6'
+                                        color: 'rgba(84, 112, 198,.8)'
                                     }
                                 },
                                 {
                                     value: this.gujiao,
                                     itemStyle: {
-                                        color: '#91cc75'
+                                        color: 'rgba(145, 204, 117,.8)'
                                     }
                                 },
                             ],
